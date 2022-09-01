@@ -43,7 +43,7 @@ def test_register_student():
         browser.element('#example-modal-sizes-title-lg').should(have.exact_text('Thanks for submitting the form'))
 
 
-def test_negative_students_form():
+def test_fail_students_form():
     with allure.step('Open students registration form'):
         browser.open('https://demoqa.com/automation-practice-form')
 
@@ -51,6 +51,8 @@ def test_negative_students_form():
         browser.element('#submit').perform(command.js.click)
 
     with allure.step('Assert'):
+        browser.element('#example-modal-sizes-title-lg').should(have.exact_text('Thanks for submitting the form'))
+        '''
         def element_visible_status():
 
             self.driver.silent = True
@@ -60,4 +62,4 @@ def test_negative_students_form():
                 return False
             else:
                 return True
-
+        '''
